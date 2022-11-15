@@ -82,10 +82,13 @@ class MySqlDriver extends base_driver_1.BaseDriver {
         this.pool = generic_pool_1.default.createPool({
             create: async () => {
                 const conn = mysql_1.default.createConnection(this.config);
-                console.log('********** create connection *************')
-                conn.query("SET SESSION sql_mode = 'ANSI_QUOTES'")
                 const connect = util_1.promisify(conn.connect.bind(conn));
+                console.log('********** create connection *************');
+                // conn.query("SET SESSION sql_mode = 'ANSI_QUOTES'")
                 if (conn.on) {
+                    conn.on('connection', () => {
+                        console.log('ON CONNECTION');
+                    });
                     conn.on('error', () => {
                         conn.destroy();
                     });

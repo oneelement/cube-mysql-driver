@@ -126,8 +126,11 @@ export class MySqlDriver extends BaseDriver implements DriverInterface {
         const conn: any = mysql.createConnection(this.config);
         const connect = promisify(conn.connect.bind(conn));
         console.log('********** create connection *************')
-        conn.query("SET SESSION sql_mode = 'ANSI_QUOTES'")
+        // conn.query("SET SESSION sql_mode = 'ANSI_QUOTES'")
         if (conn.on) {
+          conn.on('connection', () => {
+            console.log('ON CONNECTION')
+          })
           conn.on('error', () => {
             conn.destroy();
           });

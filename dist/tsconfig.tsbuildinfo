@@ -592,7 +592,7 @@
         "affectsGlobalScope": false
       },
       "../src/mysqldriver.ts": {
-        "version": "773262cfabb92298e80aba51d91a170688c9cb68b9bcef0d07363c62ed63697c",
+        "version": "8139a1612365222d449cc09cdfe540934aa0c86e3104d37d8ca96200b1cee433",
         "signature": "dcbb0d07e4b9a6d14d3c8913a57a290f1eb78ffe0bb70a5ba368ba5453108f68",
         "affectsGlobalScope": false
       },
