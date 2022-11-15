@@ -1,5 +1,5 @@
-const fromExports = require('./dist/src');
-const { MySqlDriver } = require('./dist/src/MySqlDriver');
+const fromExports = require('./src');
+const { MySqlDriver } = require('./src/MySqlDriver');
 
 /**
  * After 5 years working with TypeScript, now I know
